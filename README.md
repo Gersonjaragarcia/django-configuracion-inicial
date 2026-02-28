@@ -48,17 +48,14 @@ INSTALLED_APPS = [
     'main', 
 ]
 
-### Creación de la Vista (La Lógica)
+### 3. Creación de la Vista (La Lógica)
+La vista es la función que procesa la petición del usuario y devuelve una respuesta.
 
-La Vista es el cerebro de la aplicación. Es una función que recibe una petición web (request) y devuelve una respuesta, que en este nivel inicial es un simple texto formateado con HTML.
+*   **Archivo:** `main/views.py`
+*   **Código:**
 
-    Archivo: main/views.py
-    Concepto: Usamos HttpResponse para enviar datos al navegador.
-# main/views.py
+```python
 from django.http import HttpResponse
 
 def home(request):
     return HttpResponse("<h1>¡Bienvenido a mi primera App en Django!</h1>")
-
-
-
