@@ -10,3 +10,55 @@ En este capitulo inicio mi prtafolio de este importante framework de python
 1. Clonar el repo.
 2. `pip install -r requirements.txt`
 3. `python manage.py runserver`
+
+## Proyecto vs. Aplicación (Apps)
+Una de las primeras lecciones clave es diferenciar estos dos comandos esenciales:
+
+*   **`django-admin startproject core .`**: Crea el "corazón" del sitio (ajustes globales, base de datos, seguridad).
+*   **`python manage.py startapp main`**: Crea un módulo funcional específico. Un proyecto puede tener múltiples apps (ej: usuarios, blog, tienda). 
+---
+
+## Flujo de Trabajo para crear una funcionalidad
+
+Para que una página sea visible en Django, seguí este flujo de 4 pasos:
+
+### 1. Creación de la App
+Generación de la estructura de carpetas necesaria para la lógica del negocio.
+```bash
+python manage.py startapp main.
+
+## 2. Registro de la Aplicación
+
+Django es un sistema modular. Para que el proyecto reconozca las funciones, modelos y configuraciones de nuestra nueva app, debemos darla de alta en el archivo de configuración global.
+
+*   **Archivo:** `core/settings.py`
+*   **Acción:** Añadir `'main',` a la lista de `INSTALLED_APPS`.
+
+```python
+# core/settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    # Mis Aplicaciones (Apps locales)
+    'main', 
+]
+
+### Creación de la Vista (La Lógica)
+
+La Vista es el cerebro de la aplicación. Es una función que recibe una petición web (request) y devuelve una respuesta, que en este nivel inicial es un simple texto formateado con HTML.
+
+    Archivo: main/views.py
+    Concepto: Usamos HttpResponse para enviar datos al navegador.
+# main/views.py
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("<h1>¡Bienvenido a mi primera App en Django!</h1>")
+
+
+
