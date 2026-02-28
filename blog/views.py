@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+# Esta es la función que te falta:
+def blog_index(request):
+    return HttpResponse("Bienvenido al Índice del Blog")
+
