@@ -60,7 +60,7 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse("<h1>¡Bienvenido a mi primera App en Django!</h1>")
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 Para mantener el código organizado y escalable, el proyecto sigue una arquitectura modular dividida en aplicaciones independientes:
 
