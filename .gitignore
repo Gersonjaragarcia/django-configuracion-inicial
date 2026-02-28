@@ -1,0 +1,19 @@
+# Python - Archivos compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales (Aunque el tuyo está fuera, es buena práctica)
+env/
+venv/
+ENV/
+
+# Base de datos local (En producción se usa PostgreSQL, no este archivo)
+db.sqlite3
+
+# Variables de entorno / Secretos
+.env
+
+# Archivos de configuración de editores (VS Code, PyCharm)
+.vscode/
+.idea/
