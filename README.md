@@ -59,3 +59,21 @@ from django.http import HttpResponse
 
 def home(request):
     return HttpResponse("<h1>¡Bienvenido a mi primera App en Django!</h1>")
+
+## 📂 Estructura del Proyecto
+
+Para mantener el código organizado y escalable, el proyecto sigue una arquitectura modular dividida en aplicaciones independientes:
+
+```text
+cap01_Basico/
+├── core/              # Configuración global del proyecto (settings, urls principales)
+├── main/              # Aplicación principal (Landing page)
+│   ├── urls.py        # Rutas específicas de la app
+│   └── views.py       # Lógica de la página de inicio
+├── blog/              # Aplicación de Blog
+│   ├── urls.py        # Rutas del blog (/blog/)
+│   └── views.py       # Lógica de artículos y listados
+├── contacto/          # Aplicación de Contacto
+│   ├── urls.py        # Rutas de contacto (/contacto/)
+│   └── views.py       # Lógica de formularios de contacto
+└── manage.py          # Utilidad de línea de comandos de Django
